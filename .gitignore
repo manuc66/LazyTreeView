@@ -1,0 +1,5 @@
+bin
+obj
+/LazyTreeView/LazyTreeView/obj/Debug
+*.suo
+*.user

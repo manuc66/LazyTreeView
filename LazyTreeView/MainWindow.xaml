@@ -1,0 +1,15 @@
+﻿<Window x:Class="LazyTreeView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:LazyTreeView"
+        Title="MainWindow" Height="350" Width="525"
+        Name="parentContext"
+       >
+  <TreeView x:Name="fileSystemTreeView" local:LazyTreeViewExtension.IsLazyLoading="True">
+    <TreeView.ItemTemplate>
+      <HierarchicalDataTemplate ItemsSource ="{Binding Path=SubItems}">
+        <TextBlock Text="{Binding Path=ShortPath}"/>
+      </HierarchicalDataTemplate>
+    </TreeView.ItemTemplate>
+  </TreeView>
+</Window>
