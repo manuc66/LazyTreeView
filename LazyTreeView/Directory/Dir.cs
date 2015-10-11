@@ -15,10 +15,7 @@ namespace LazyTreeView.Directory
       Path = path;
     }
 
-    public ObservableCollection<Dir> SubItems
-    {
-      get { return _subItems; }
-    }
+    public ObservableCollection<Dir> SubItems => _subItems;
 
     public string ShortPath
     {

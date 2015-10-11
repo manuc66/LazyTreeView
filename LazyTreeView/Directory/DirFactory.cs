@@ -28,7 +28,6 @@ namespace LazyTreeView.Directory
       }
       else
       {
-
         return new DirWithNoChildren(this, path);
       }
     }

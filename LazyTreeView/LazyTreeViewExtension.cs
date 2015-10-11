@@ -26,10 +26,10 @@ namespace LazyTreeView
 
     private LazyTreeViewExtension()
     {
-      _actionByEventType = new Dictionary<Type, Action<ILazyCollection>> 
-      { 
+      _actionByEventType = new Dictionary<Type, Action<ILazyCollection>>
+      {
         { typeof(TreeViewCollapsedRoutedEventManager), ItemCollapsed },
-        { typeof(TreeViewExpandedRoutedEventManager), ItemExpanded } 
+        { typeof(TreeViewExpandedRoutedEventManager), ItemExpanded }
       };
     }
 
@@ -90,17 +90,9 @@ namespace LazyTreeView
     private ILazyCollection GetLazyCollectionComponent(EventArgs e)
     {
       var routedEventArgs = e as RoutedEventArgs;
-      if (routedEventArgs == null)
-      {
-        return null;
-      }
 
-      var treeViewItem = routedEventArgs.OriginalSource as TreeViewItem;
-      if (treeViewItem == null)
-      {
-        return null;
-      }
-      var lazyCollectionComponent = treeViewItem.Header as ILazyCollection;
+      var treeViewItem = routedEventArgs?.OriginalSource as TreeViewItem;
+      var lazyCollectionComponent = treeViewItem?.Header as ILazyCollection;
 
       return lazyCollectionComponent;
     }
